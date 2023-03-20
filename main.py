@@ -1,11 +1,8 @@
 import speech_recognition as sp
-import pyaudio
-import pygame 
-
-pygame.init()
-pygame.mixer.init()
+from speak_hi import *
 
 mic = sp.Microphone(device_index=3)
+
 
 r = sp.Recognizer()
 with sp.Microphone() as source:
@@ -22,8 +19,8 @@ except sp.RequestError as e:
 
 
 if a=="Привет":
-    pygame.mixer.music.load("hi.mp3")
-    pygame.mixer.music.play(-1)
+    speak_hi() 
+    print("Выход: --->")
 else:
     print("Я вас не понял.")
     
