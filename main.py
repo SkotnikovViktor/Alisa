@@ -1,6 +1,7 @@
 # Голосовой помошник Алиса
 import speech_recognition as sp
 from speak_hi import *
+import os
 
 mic = sp.Microphone(device_index=3)
 
@@ -18,10 +19,12 @@ except sp.UnknownValueError:
 except sp.RequestError as e:
     print("Could not request results from Google Speech Recognition service; {0}".format(e))
 
-while True:
-    if a=="Привет":
-        speak_hi() 
-        print("Выход: --->")
-    else:
-        print("Я вас не понял.")
+
+if a=="Алиса ты здесь":
+    speak_hi() 
+    print("Выход: --->")
+elif a=="Открой Paint":
+    os.startfile("C:/WINDOWS/system32/mspaint.exe")
+else:
+    print("Я вас не понял.")
     
