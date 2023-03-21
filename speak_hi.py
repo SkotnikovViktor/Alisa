@@ -3,9 +3,18 @@ import os
 
 def speak_hi():
     engine = pyttsx3.init()
-    engine.say("Так точно сэр!")
+    engine.say("Да, я здесь и готов вам помочь.")
     engine.runAndWait()
+
 def understent():
     engine = pyttsx3.init()
-    engine.say("Сэр, я вас не понял.")
+    engine.say("Скажите вашу команду по другому.")
     engine.runAndWait()
+
+
+def error():
+    engine = pyttsx3.init()
+    engine.say("Товарищ, вышла какая-то не известная ошибка.")
+    engine.runAndWait()
+
+
